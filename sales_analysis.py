@@ -16,10 +16,11 @@ menu_schema = StructType([
 ])
 
 sales_df = spark.read.format("csv").option("inferschema", "true"). \
-    schema(sales_schema).load("/Users/soumyakantarath/Desktop/DS_Monk/PySparkPractice/resources/sales.csv.txt")
+    schema(sales_schema).load("/Users/soumyakantarath/Desktop/Pyspark_projects/PySparkPractice/resources/sales.csv.txt")
 
 sales_df.show(truncate=False)
 
 menu_df = spark.read.format("csv").option("inferschema", "true").schema(menu_schema). \
-    load("/Users/soumyakantarath/Desktop/DS_Monk/PySparkPractice/resources/menu.csv.txt")
+    load("/Users/soumyakantarath/Desktop/Pyspark_projects/PySparkPractice/resources/menu.csv.txt")
 menu_df.show()
+menu_df.schema()
